@@ -8,4 +8,3 @@ async function run() {
 
   console.log(`${entryes[0].summonerName}, your elo is: ${entryes[0].tier} - ${entryes[0].rank}`);
 }
-

@@ -1,3 +1,4 @@
+export default
 {
   "server": {
     "BR1": "br1.api.riotgames.com",

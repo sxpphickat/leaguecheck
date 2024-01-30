@@ -1,4 +1,5 @@
-import routes from './riot_endpoints.json' assert { type: 'json' }
+import routes from './riot_endpoints.js' 
+//assert { type: 'json' }
 
 const header = {
     headers: {

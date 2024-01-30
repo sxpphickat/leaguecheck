@@ -1,4 +1,4 @@
-import { getPuuidByRiotId, getSummonerByPuuid, getEntriesBySummoner } from './api_calls';
+import { getPuuidByRiotId, getSummonerByPuuid, getEntriesBySummoner } from './calls.js';
  
 async function run() {
 
@@ -9,4 +9,3 @@ async function run() {
   console.log(`${entryes[0].summonerName}, your elo is: ${entryes[0].tier} - ${entryes[0].rank}`);
 }
 
-run();

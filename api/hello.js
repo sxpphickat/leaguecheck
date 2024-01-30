@@ -4,4 +4,4 @@ export default function handler(req, res) {
     message: `Hello ${name}`,
     test: 'test'
   })
-};
+} 

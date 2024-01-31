@@ -1,6 +1,6 @@
 
 export default async function Home() {
-  const data = await fetch('http://localhost:3000/api/get-player')
+  const data = await fetch('https://leaguecheck.vercel.app/api/get-player')
   .then((res) => {
     if(!res.ok) {
       throw new Error('error no 666');

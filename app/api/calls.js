@@ -16,9 +16,6 @@ async function getPlayer(gameName, tagLine) {
   const accountEndPoint = `${routes['endpoint']['puuid']}${gameName}/${tagLine}`;
   const request = new URL(`https://${routes['region']['AMERICAS']}${accountEndPoint}`);
 
-  console.log(request);
-  console.log(header);
-
   const res = await fetch(request, header)
     .then((res) => {
     if(!res.ok) {

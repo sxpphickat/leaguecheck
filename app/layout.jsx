@@ -6,6 +6,10 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
+
+export const metadata = {
+  title: 'league check',
+}
  
 
 export default function RootLayout({ children }) {

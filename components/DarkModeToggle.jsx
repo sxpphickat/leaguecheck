@@ -1,5 +1,4 @@
 'use client';
-import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
 import { useEffect, useState } from 'react';
 import LightModeIcon from './LightModeIcon';
 import DarkModeIcon from './DarkModeIcon';
@@ -8,14 +7,23 @@ export default function DarkModeToggle() {
   const [ isDark, setIsDark ] = useState(false);
 
   const handleClick = () => {
-    setIsDark(!isDark);
+    if (isDark) {
+      localStorage.theme = 'light';
+      setIsDark(!isDark);
+    } else {
+      localStorage.theme = 'dark';
+      setIsDark(!isDark);
+    }
   }
-
+  
   useEffect(() => {
-    const rootElement = document.documentElement;
-
-    rootElement.classList.toggle('dark');
-
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove('dark')
+      setIsDark(false);
+    }
   }, [isDark]);
 
   return (
@@ -27,7 +35,7 @@ export default function DarkModeToggle() {
         ? <DarkModeIcon />
         : <LightModeIcon />
       }
-      
+
     </button>
   )
 }

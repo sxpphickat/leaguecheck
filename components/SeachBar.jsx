@@ -45,7 +45,7 @@ export default function SearchBar() {
                     name="server" id="server">
                       {generateServerList()}
             </select>
-            <input className="dark:text-white px-4 py-1 dark:bg-neutral-800 text-2xl outline-none transition-all"
+            <input className="dark:text-white px-4 py-1 dark:bg-neutral-800 text-2xl sm:w-96 w-52 outline-none transition-all"
                     type="text"
                     onChange={handleChange}
                     placeholder={myPlaceholder}

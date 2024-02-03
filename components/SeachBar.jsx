@@ -21,7 +21,7 @@ export default function SearchBar() {
 
 	return (
 		<div className="">
-          <form action="" className="group flex flex-1 justify-center w-auto"
+          <form action="" className="flex  justify-center rounded-xl text-black shadow-md dark:shadow-neutral-800 border-2 dark:border-neutral-700 border-neutral-200 bg-neutral-200 dark:bg-neutral-700 transition-all"
               onMouseOver={() => setMyPlaceholder('Game Name + #BR1')}
               onMouseLeave={() => focused ? null : setMyPlaceholder('Search')}
               onFocus={() => setFocused(true)}
@@ -30,13 +30,13 @@ export default function SearchBar() {
               setFocused(false)
               }}
           >
-            <input className="border-2 border-r-0 border-red-800 rounded-l-full px-4 py-1 w-2/5 group-hover:w-4/5 group-focus-within:w-4/5 bg-neutral-800 text-2xl outline-none transition-all"
+            <input className="dark:text-white rounded-l-xl px-4 py-1 dark:bg-neutral-800 text-2xl outline-none transition-all"
                     type="text"
                     onChange={handleChange}
                     placeholder={myPlaceholder}
                   />
-            <button className=" border-red-900 text-neutral-100 font-serif border-2 rounded-r-full px-4 py-1 bg-neutral-900 text-2xl">ck</button>
-            <h1>{playerSearch}</h1>
+            <button className=" dark:text-neutral-100 font-serif border-l dark:border-neutral-700 border-neutral-50 rounded-r-xl px-4 py-1 bg-neutral-100 dark:bg-neutral-900 text-2xl transition-all ">ck</button>
+{/*             <h1>{playerSearch}</h1> */}
           </form>
         </div>
 	)

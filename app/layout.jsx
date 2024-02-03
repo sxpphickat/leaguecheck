@@ -16,14 +16,15 @@ export default function RootLayout({ children }) {
   return (
     <>
       <html lang="en" className={`${inter.className}`}>
-        <body className="dark:text-white dark:bg-neutral-950 bg-white h-screen w-scree">
+        <body className="dark:text-white dark:bg-neutral-950 bg-white h-screen w-scree transition-all duration-500 
+    ">
           <header className="p-2 h-[5%] flex justify-start items-center">
             <p>LEAGUE CHECK</p>
             <span className="ml-auto ">
               <DarkModeToggle />
             </span>
           </header>
-            <div className="h-[90%] border-y-2 dark:border-y-neutral-700">
+            <div className="h-[90%] border-y-2 dark:border-y-neutral-700 transition-all">
               {children}
             </div>
           <footer className="flex justify-center items-center p-2 h-[5%]">

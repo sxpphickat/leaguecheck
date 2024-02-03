@@ -6,8 +6,8 @@ export default function Home() {
 
     return (
       <>
-        <div className="flex flex-1 flex-col gap-4 justify-center items-center">
-          <h1 className="text-4xl">LEAGUE CHECK</h1>
+        <div className="flex flex-1 flex-col gap-8 justify-start items-center h-full">
+          <h1 className="text-4xl mt-72">LEAGUE CHECK</h1>
           <SearchBar />
         </div>
       </>

@@ -16,23 +16,19 @@ export async function GET(request) {
   const data = await getPlayer(gameName, tagLine);
 
   if (data === undefined) {
-    return NextResponse.json(
-      {  },
-      {
-        status: 500
-      }
-    )
+    return NextResponse.json({
+      status: 500,
+      message: 'riot api error'
+    })
   }
   return NextResponse.json(
     {
       body: data,
+      status: 200,
       query: request.query,
       path: request.nextUrl.pathname,
       query: request.nextUrl.search,
       cookies: request.cookies.getAll(),
-    },
-    {
-      status: 200,
     },
   );
 }

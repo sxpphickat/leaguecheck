@@ -22,9 +22,9 @@ export default function ProfileCard({playerData}) {
         <Rank rankedData={playerData.entries} 
               queueType={queueType}
         />
-        <Winrate rankedData={playerData.entries}
+        {playerData.entries.length > 0 && <Winrate rankedData={playerData.entries}
                  queueType={queueType} 
-        />
+        />}
     </div>
   );
 };

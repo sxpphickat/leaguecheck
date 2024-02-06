@@ -25,7 +25,7 @@ export default function Profile({ searchQuery, isLoaded, setIsLoaded, setCardHei
   return (
     isLoaded ? (
     <>
-      {playerData.status === 200 ? (<ProfileCard playerData={playerData} />) : (<h1>player not found ☠️</h1>)}
+      {playerData.status === 200 ? (<ProfileCard playerData={playerData.body} />) : (<h1>player not found ☠️</h1>)}
     </>
     ) : (
       <> {/* loading screen */} 

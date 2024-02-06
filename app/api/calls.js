@@ -32,9 +32,11 @@ async function getPlayer(gameName, tagLine) {
   return res;
 };
 
-async function getSummoner(player) {
-  const request = new URL(`https://${routes['server']['BR1']}${routes['endpoint']['summoner']}${player.puuid}`); 
-
+async function getSummoner(player, server) {
+/*   if (player === undefined) {
+    return undefined;
+  } */
+  const request = new URL(`https://${routes['server'][server]}${routes['endpoint']['summoner']}${player.puuid}`); 
 
   const res = await fetch(request, header)
     .then(res => {
@@ -53,8 +55,8 @@ async function getSummoner(player) {
   return res;
 }
 
-async function getEntries(summoner) {
-  const request = new URL(`https://${routes['server']['BR1']}${routes['endpoint']['entryes']}${summoner.id}`);
+async function getEntries(summoner, server) {
+  const request = new URL(`https://${routes['server'][server]}${routes['endpoint']['entryes']}${summoner.id}`);
   
   const res = await fetch(request, header)
   .then(res => {

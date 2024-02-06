@@ -1,26 +1,37 @@
 import { NextResponse } from 'next/server';
-import { getPlayer } from '../calls';
+import { getPlayer, getSummoner, getEntries } from '../calls';
+
+function apiRequestFail() {
+  return NextResponse.json({
+    status: 500,
+    message: 'riot api error'
+  })
+}
  
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const hasGameName = searchParams.has('gameName');
-  const gameName = hasGameName 
-    ? searchParams.get('gameName')?.slice(0, 100)
-    : 'Sapphic Kat';
-  
-  const hasTagLine = searchParams.has('tagLine');
-  const tagLine = hasTagLine
-    ? searchParams.get('tagLine')?.slice(0, 100)
-    : 'BR1';
+  const gameName =  searchParams.get('gameName')?.slice(0, 100);
+  const tagLine = searchParams.get('tagLine')?.slice(0, 100);
+  const server = searchParams.get('server')?.slice(0, 100);
 
-  const data = await getPlayer(gameName, tagLine);
+  const player = await getPlayer(gameName, tagLine);
 
-  if (data === undefined) {
-    return NextResponse.json({
-      status: 500,
-      message: 'riot api error'
-    })
+  if (!player) {
+     return apiRequestFail();
   }
+  const summoner = await getSummoner(player, server);
+
+  if (!summoner) {
+     return apiRequestFail();
+  }
+
+  const entries = await getEntries(summoner, server);
+
+  const data = {
+    summoner: summoner,
+    entries: entries
+  }
+
   return NextResponse.json(
     {
       body: data,

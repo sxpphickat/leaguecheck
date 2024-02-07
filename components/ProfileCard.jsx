@@ -18,7 +18,7 @@ export default function ProfileCard({playerData}) {
     <div className="flex flex-col p-4 gap-8 justify-start items-center w-56 h-96 bg-neutral-200 rounded-lg shadow-xl dark:shadow-neutral-800 dark:bg-neutral-700 transition-all">
        {/*  <QueueSelector />  */}
         <Icon iconId={playerData.summoner.profileIconId} />
-        <h1 className="flex justify-center text-lg font-medium">{playerData.summoner.name}</h1>
+        <h1 className="flex justify-center text-lg font-medium">{playerData.player.gameName}</h1>
         <Rank rankedData={playerData.entries} 
               queueType={queueType}
         />

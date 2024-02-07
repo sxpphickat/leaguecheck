@@ -28,6 +28,7 @@ export async function GET(request) {
   const entries = await getEntries(summoner, server);
 
   const data = {
+    player: player,
     summoner: summoner,
     entries: entries
   }

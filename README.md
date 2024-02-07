@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, set up a `.env` file at the project's root directory with your [riot api key](https://developer.riotgames.com/)
+```bash
+# leaguecheck/.env
+API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+``` 
+
+install dependencies with `bun i` or equivalent, then run the development server:
 
 ```bash
 npm run dev
